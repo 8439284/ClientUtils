@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "clientutils",
+  "version": "${version}",
+  "name": "ClientUtils",
+  "description": "description",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/clientutils/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.ajls.clientutils.client.ClientutilsClient"
+    ],
+    "main": [
+      "org.ajls.clientutils.Clientutils"
+    ]
+  },
+  "mixins": [
+    "clientutils.mixins.json",
+    {
+      "config": "clientutils.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
