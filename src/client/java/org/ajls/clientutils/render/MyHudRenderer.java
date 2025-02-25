@@ -6,6 +6,9 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.client.util.math.MatrixStack;
+import org.ajls.clientutils.calculations.HealthRegenByFoodCalc;
+import org.ajls.clientutils.commands.debug.ChangeIntValueCommand;
+import org.ajls.clientutils.container.HealthRegenByFoodData;
 
 public class MyHudRenderer implements HudRenderCallback {
 //    @Override
@@ -48,12 +51,18 @@ public class MyHudRenderer implements HudRenderCallback {
         String text = "Health: " + health;
 //        String text = "Hello, Minecraft Fabric 1.21.4!";
 
+        HealthRegenByFoodData healthRegenByFoodData = HealthRegenByFoodCalc.getHealthRegenByFoodData();
+        double vigorHealth = healthRegenByFoodData.getByVigor();
+        double foodLevelHealth = healthRegenByFoodData.getByFoodLevel();
+        String foodHealthText = "Food Health: " + vigorHealth + ", " + foodLevelHealth;
+
         // Calculate the position (e.g., top-left corner)
         int x = 10; // 10 pixels from the left
         int y = 10; // 10 pixels from the top
 
         // Render the text on the screen using DrawContext
-        drawContext.drawText(client.textRenderer, text, healthBarX, healthBarY, 0xFFFFFF, true); // 0xFFFFFF is white color  //shadow false
+        drawContext.drawText(client.textRenderer, text, healthBarX, healthBarY - 10, 0xFFFFFF, true); // 0xFFFFFF is white color  //shadow false  // -8
+        drawContext.drawText(client.textRenderer, foodHealthText, healthBarX, healthBarY - 20, 0xFFFFFF, true); // 0xFFFFFF is white color  //shadow false
     }
 
 }
