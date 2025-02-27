@@ -39,6 +39,6 @@ public class NoFogMixin {
     )
     public Fog redirectApplyFog(Camera camera, BackgroundRenderer.FogType fogType, Vector4f vector4f, float f, boolean bl, float g) {
         // Return a dummy Fog object or null to effectively disable the fog application
-        return null;
+        return Fog.DUMMY;
     }
 }
