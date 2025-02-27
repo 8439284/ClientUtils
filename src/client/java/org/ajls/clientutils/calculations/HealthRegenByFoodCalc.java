@@ -5,8 +5,6 @@ import net.minecraft.entity.player.HungerManager;
 import org.ajls.clientutils.container.HealthRegenByFoodData;
 import org.ajls.clientutils.mixin.client.HungerManagerAccessor;
 
-import java.lang.reflect.Field;
-
 public class HealthRegenByFoodCalc {
     public static HealthRegenByFoodData getHealthRegenByFoodData() {
         MinecraftClient client = MinecraftClient.getInstance();

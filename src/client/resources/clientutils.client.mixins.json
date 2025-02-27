@@ -4,6 +4,8 @@
   "package": "org.ajls.clientutils.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "HungerManagerAccessor",
+    "NoFogMixin"
   ],
   "injectors": {
     "defaultRequire": 1

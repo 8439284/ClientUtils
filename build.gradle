@@ -78,6 +78,15 @@ jar {
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
+
+    // Set the output directory to your Minecraft mods folder
+    destinationDirectory = file("D:/David/Pt_Program/hmcl/.minecraft/versions/1.21.4fabric/mods")
+
+    // Alternatively, for macOS or Linux:
+    // destinationDirectory = file(System.getProperty("user.home") + "/.minecraft/mods")
+
+    // Optional: You can also rename the output JAR file if needed
+    archiveFileName = "ClientUtils-${project.version}.jar"
 }
 
 // configure the maven publication
