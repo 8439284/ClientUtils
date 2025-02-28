@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import org.ajls.clientutils.commands.debug.ChangeIntValueCommand;
+import org.ajls.clientutils.commands.utils.NetherPortalCommand;
 import org.ajls.clientutils.render.MyHudRenderer;
 
 public class ClientutilsClient implements ClientModInitializer {
@@ -14,6 +15,7 @@ public class ClientutilsClient implements ClientModInitializer {
         // Register your command here
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, environment) -> {
             ChangeIntValueCommand.register(dispatcher);
+            NetherPortalCommand.register(dispatcher);
 //            dispatcher.register(
 //                    CommandManager.literal("yourcommand")
 //                            .executes(context -> {
