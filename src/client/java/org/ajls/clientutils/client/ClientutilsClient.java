@@ -8,7 +8,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
 //import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 //import net.minecraft.client.gui.DrawContext;
 //import net.minecraft.client.render.RenderTickCounter;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.util.Identifier;
+import org.ajls.clientutils.commands.debug.ChangeIntValueCommand;
 import org.ajls.clientutils.render.MyHudRenderer;
 //import org.ajls.clientutils.commands.debug.ChangeIntValueCommand;
 //import org.ajls.clientutils.render.MyHudRenderer;
@@ -48,20 +50,20 @@ public class ClientutilsClient implements ClientModInitializer {
 //        });
 
         // Register your command here
-//        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, environment) -> {
-//            ChangeIntValueCommand.register(dispatcher);
-//
-//
-//
-////            dispatcher.register(
-////                    CommandManager.literal("yourcommand")
-////                            .executes(context -> {
-////                                ServerCommandSource source = context.getSource();
-////                                source.sendFeedback(Text.of("Hello, this is your custom command!"), false);
-////                                return 1;
-////                            })
-////            );
-//        });
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, environment) -> {
+            ChangeIntValueCommand.register(dispatcher);
+
+
+
+//            dispatcher.register(
+//                    CommandManager.literal("yourcommand")
+//                            .executes(context -> {
+//                                ServerCommandSource source = context.getSource();
+//                                source.sendFeedback(Text.of("Hello, this is your custom command!"), false);
+//                                return 1;
+//                            })
+//            );
+        });
 
 //        System.out.println("Your mod has been initialized!");
 
